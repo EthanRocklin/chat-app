@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signUp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:overScrollMode="never"
+    android:padding="24dp"
+    android:scrollbars="none"
+    android:background="@color/background"
+    tools:context=".activities.CreateAccountActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/courgette"
+            android:text="@string/create_account"
+            android:textColor="@color/primary"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <!-- Add Account Image -->
+        <FrameLayout
+            android:id="@+id/layoutImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/profileImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/background_image"
+            android:scaleType="centerCrop"
+            app:riv_oval="true"/>
+
+            <TextView
+                android:id="@+id/textAddImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/courgette"
+                android:text="@string/add_image"
+                android:textColor="@color/secondary_text"
+                android:textSize="12sp"/>
+
+        </FrameLayout>
+
+        <!-- Input Fields -->
+        <EditText
+            android:id="@+id/inputFirstName"
+            android:hint="@string/hint_first_name"
+            android:inputType="textPersonName"
+            style="@style/input_field"/>
+
+        <EditText
+            android:id="@+id/inputLastName"
+            android:hint="@string/hint_last_name"
+            android:inputType="textPersonName"
+            style="@style/input_field"/>
+
+        <EditText
+            android:id="@+id/inputEmail"
+            android:hint="@string/hint_email"
+            android:inputType="textEmailAddress"
+            style="@style/input_field"/>
+
+        <!-- Password Field w/ See Password Toggle -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/see_password_icon"
+            app:hintEnabled="false"
+            app:boxBackgroundMode="none">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputPassword"
+                android:hint="@string/hint_password"
+                android:inputType="textPassword"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                style="@style/input_field"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Password Field w/ See Password Toggle -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/see_password_icon"
+            app:hintEnabled="false"
+            app:boxBackgroundMode="none">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputConfirmPassword"
+                android:hint="@string/confirm_password"
+                android:inputType="textPassword"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                style="@style/input_field"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Create and Login Buttons -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_create"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="40dp"
+                android:layout_gravity="top|center"
+                android:backgroundTint="@color/primary"
+                android:fontFamily="@font/courgette"
+                android:text="@string/create_button_text"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:cornerRadius="8sp"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:visibility="invisible"/>
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/textSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/courgette"
+            android:text="@string/login"
+            android:textColor="@color/primary"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+</ScrollView>
