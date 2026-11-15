@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.chat_app.databinding.ActivitySignInBinding;
+import com.example.chat_app.databinding.ActivityLoginBinding;
 import com.example.chat_app.utilities.Constants;
 import com.example.chat_app.utilities.PreferenceManager;
 import com.example.chat_app.utilities.TriState;
@@ -26,13 +26,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private ActivitySignInBinding binding;
+    private ActivityLoginBinding binding;
     private PreferenceManager preferenceManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivitySignInBinding.inflate(getLayoutInflater());
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         preferenceManager = new PreferenceManager(getApplicationContext());
         setListeners();
@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
      * This method sets any animations needed for the Sign In (Login) page.
      */
     private void setAnimations() {
-        // Color transition for Create Account text
+        // Color transition for Create text
         int color1 = Color.argb(255, 216, 61, 105);
         int color2 = Color.argb(255, 182, 87, 255);
         int color3 = Color.argb(255, 232, 136, 88);
@@ -74,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
      */
     private void setListeners() {
         binding.textCreateAccount.setOnClickListener(v ->
-                startActivity(new Intent(getApplicationContext(), CreateAccountActivity.class)));
+                startActivity(new Intent(getApplicationContext(), SignUpActivity.class)));
         binding.btnLogin.setOnClickListener(v -> {
             if (validateCredentials()) {
                 login();
@@ -89,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
      * @param isValid the status of the input's validity (TRUE, FALSE, UNKNOWN)
      */
     private void highlightInputField(EditText inputField, TriState isValid) {
-        // Gets the GradientDrawable of the EditText element to change the
+        // Gets the GradientDrawable of the EditText element to change the border
         Drawable background = inputField.getBackground();
         if (background instanceof GradientDrawable) {
             GradientDrawable gradient = (GradientDrawable) background.mutate();

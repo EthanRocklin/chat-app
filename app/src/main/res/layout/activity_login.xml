@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             app:endIconMode="password_toggle"
-            app:endIconTint="@color/see_password_icon"
+            app:endIconTint="@color/icon_see_password"
             app:hintEnabled="false"
             app:boxBackgroundMode="none">
 

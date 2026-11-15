@@ -10,7 +10,7 @@
     android:padding="24dp"
     android:scrollbars="none"
     android:background="@color/background"
-    tools:context=".activities.CreateAccountActivity">
+    tools:context=".activities.SignUpActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             app:endIconMode="password_toggle"
-            app:endIconTint="@color/see_password_icon"
+            app:endIconTint="@color/icon_see_password"
             app:hintEnabled="false"
             app:boxBackgroundMode="none">
 
@@ -100,7 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             app:endIconMode="password_toggle"
-            app:endIconTint="@color/see_password_icon"
+            app:endIconTint="@color/icon_see_password"
             app:hintEnabled="false"
             app:boxBackgroundMode="none">
 
