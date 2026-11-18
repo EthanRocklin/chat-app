@@ -42,6 +42,7 @@
         android:layout_marginEnd="8dp"
         android:gravity="center"
         android:maxLines="1"
+        android:fontFamily="@font/courgette"
         android:textColor="@color/primary_text"
         android:textSize="16sp"
         android:textStyle="bold"
