@@ -2,6 +2,7 @@ package com.example.chat_app.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -62,8 +63,14 @@ public class UserActivity extends AppCompatActivity implements UserListener {
                             user.setName(snapshot.getString(Constants.KEY_FIRST_NAME));
                             user.setEmail(snapshot.getString(Constants.KEY_EMAIL));
                             user.setImage(snapshot.getString(Constants.KEY_IMAGE));
-                            user.setId(snapshot.getString(Constants.KEY_USER_ID));
+                            user.setId(snapshot.getId());
                             user.setToken(snapshot.getString(Constants.KEY_FCM_TOKEN));
+
+                            Log.d("UserActivity", "docId=" + snapshot.getId()
+                                    + " userid=" + snapshot.getString(Constants.KEY_USER_ID)
+                                    + " fields=" + snapshot.getData().keySet()
+                                    + " | user.getId()=" + user.getId());
+
                             users.add(user);
                         }
                         //

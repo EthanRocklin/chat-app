@@ -3,6 +3,7 @@ package com.example.chat_app.activities;
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -42,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
     /**
      * This method sets any animations needed for the Sign In (Login) page.
      */
+    @SuppressLint("ClickableViewAccessibility")
     private void setAnimations() {
         // Color transition for Create text
         int color1 = Color.argb(255, 216, 61, 105);
